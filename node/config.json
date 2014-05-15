@@ -1,0 +1,8 @@
+{
+    "port": {
+        "shortKey": "p",
+        "action": "get",
+        "number": 1,
+        "defaultValue": 80
+    }
+}
