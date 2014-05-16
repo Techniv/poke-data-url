@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Poke Data URL</title>
+</head>
+<body>
+	<h2>Ajax loading with direct encryption</h2>
+    <img id="img"/>
+	<script>
+		(function(){
+			var imageTag = document.getElementById("img");
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', '/ajax');
+			xhr.onreadystatechange = function(e){
+				console.log(xhr.status,e);
+				if(xhr.readyState == 4){
+					console.log(xhr.responseText.substr(100));
+					imageTag.src = xhr.responseText;
+				}
+			};
+			xhr.send();
+		})();
+	</script>
+</body>
+</html>

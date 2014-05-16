@@ -21,4 +21,11 @@ app.get("/direct",function(req, res){
     });
 });
 
+app.get("/ajax", function(req, res){
+	fs.readFile(imagePath, function(err, data){
+		var image = "data:image/jpg;base64,"+data.toString("base64");
+		res.end(image);
+	});
+});
+
 app.listen(config.port);
